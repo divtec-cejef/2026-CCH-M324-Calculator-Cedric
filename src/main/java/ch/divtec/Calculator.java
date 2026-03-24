@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    static int add(double a, double b) {
+    double add(double a, double b) {
         throw new UnsupportedOperationException("Method not yet implemented.");
     }
 
-    static int subtract(double a, double b) {
+    double subtract(double a, double b) {
         throw new UnsupportedOperationException("Method not yet implemented.");
     }
 
-    static int multiply(double a, double b) {
+    double multiply(double a, double b) {
         throw new UnsupportedOperationException("Method not yet implemented.");
     }
 
-    static double divide(double a, double b) {
+    double divide(double a, double b) {
         throw new UnsupportedOperationException("Method not yet implemented.");
     }
 
-    static int factorial(double n) {
+    int factorial(double n) {
         throw new UnsupportedOperationException("Method not yet implemented.");
     }
 
@@ -37,22 +37,24 @@ public class Calculator {
             num2 = sc.nextDouble();
         }
 
+        final Calculator calc = new Calculator();
+
         double result;
         switch (operator) {
             case '+':
-                result = add(num1, num2);
+                result = calc.add(num1, num2);
                 break;
             case '-':
-                result = subtract(num1, num2);
+                result = calc.subtract(num1, num2);
                 break;
             case '*':
-                result = multiply(num1, num2);
+                result = calc.multiply(num1, num2);
                 break;
             case '/':
-                result = divide(num1, num2);
+                result = calc.divide(num1, num2);
                 break;
             case '!':
-                result = factorial(num1);
+                result = calc.factorial(num1);
                 break;
             default:
                 System.out.println("Invalid operator.");
