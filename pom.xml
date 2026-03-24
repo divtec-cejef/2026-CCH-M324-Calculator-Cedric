@@ -39,23 +39,6 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-
-            <!-- Add the exec-maven-plugin to specify the main class -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.5.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>ch.divtec.Calculator</mainClass> <!-- Specify your main class here -->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 </project>
