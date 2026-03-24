@@ -5,23 +5,33 @@ import java.util.Scanner;
 public class Calculator {
 
     double add(double a, double b) {
-        throw new UnsupportedOperationException("Method not yet implemented.");
+        return a + b;
     }
 
     double subtract(double a, double b) {
-        throw new UnsupportedOperationException("Method not yet implemented.");
+        return a - b;
     }
 
     double multiply(double a, double b) {
-        throw new UnsupportedOperationException("Method not yet implemented.");
+        return a * b;
     }
 
     double divide(double a, double b) {
-        throw new UnsupportedOperationException("Method not yet implemented.");
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return a / b;
     }
 
-    int factorial(double n) {
-        throw new UnsupportedOperationException("Method not yet implemented.");
+    long factorial(double n) {
+        if (n != (int)n) {
+            throw new IllegalArgumentException("Number must be an integer.");
+        }
+        long fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact = fact * i;
+        }
+        return fact;
     }
 
     public static void main(String[] args) {
