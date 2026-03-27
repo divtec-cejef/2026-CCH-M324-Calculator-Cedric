@@ -16,14 +16,14 @@ public class Calculator {
         return a * b;
     }
 
-    double divide(double a, double b) {
+    double divide(double a, double b) throws IllegalArgumentException {
         if (b == 0) {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
         return a / b;
     }
 
-    long factorial(double n) {
+    long factorial(double n) throws IllegalArgumentException {
         if (n != (int)n) {
             throw new IllegalArgumentException("Number must be an integer");
         }
