@@ -8,17 +8,17 @@ public class CalculatorTests {
     private static Calculator calculator = new Calculator();
 
     // Variables to store the message for a negative number and store the result
-    private static String factorialNegativeMessage;
+    private static String factorialMustBeIntegerMessage;
 
     // Method to perform setup operations before any of the test methods in the class
     @BeforeAll
     static void init() {
         // Check the exception message for a negative number and store the result
         try {
-            calculator.factorial(-3);
+            calculator.factorial(1.5);
         } catch (Exception e) {
-            factorialNegativeMessage = e.getMessage();
-            //System.err.println(factorialNegativeMessage);
+            factorialMustBeIntegerMessage = e.getMessage();
+            System.err.println(factorialMustBeIntegerMessage);
         }
     }
 
@@ -52,7 +52,7 @@ public class CalculatorTests {
             calculator.factorial(-5);
         });
         String actualMessage = exception.getMessage();
-        assertTrue(actualMessage.contains(factorialNegativeMessage));
+        assertEquals(Calculator.ERROR_MSG_NEGATIVE_NUMBER, actualMessage);
     }
 
     @Test
@@ -134,9 +134,7 @@ public class CalculatorTests {
             calculator.factorial(3.2);
         });
 
-        String expectedMessage = "Number must be an integer";
         String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals(factorialMustBeIntegerMessage, actualMessage);
     }
 }

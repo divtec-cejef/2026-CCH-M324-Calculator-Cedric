@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Calculator {
 
+    static final String ERROR_MSG_NEGATIVE_NUMBER = "Number must be positive or zero";
+
     double add(double a, double b) {
         return a + b;
     }
@@ -28,7 +30,7 @@ public class Calculator {
             throw new IllegalArgumentException("Number must be an integer");
         }
         if (n < 0) {
-            throw new IllegalArgumentException("Number must be positive or zero");
+            throw new IllegalArgumentException(ERROR_MSG_NEGATIVE_NUMBER);
         }
         long fact = 1;
         for (int i = 2; i <= n; i++) {
