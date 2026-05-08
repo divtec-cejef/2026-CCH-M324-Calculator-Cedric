@@ -61,10 +61,10 @@
                         </goals>
                     </execution>
 
-                    <!-- GĆ©nĆ©ration du rapport aprĆØs les tests -->
+                    <!-- Génération du rapport après les tests -->
                     <execution>
                         <id>report</id>
-                        <phase>test</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
