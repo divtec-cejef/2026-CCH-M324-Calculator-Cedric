@@ -41,7 +41,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <release>20</release>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
@@ -60,7 +61,7 @@
                         </goals>
                     </execution>
 
-                    <!-- Génération du rapport après les tests -->
+                    <!-- GĆ©nĆ©ration du rapport aprĆØs les tests -->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
